@@ -1,4 +1,4 @@
-name: Build and test on commit
+name: Build
 
 on: [push]
 
