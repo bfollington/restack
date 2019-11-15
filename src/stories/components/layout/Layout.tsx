@@ -190,7 +190,7 @@ export const VStackPlayground = () => {
         <label>Horizontal</label>
         <select
           value={vertical}
-          onChange={e => setHorizontal(e.target.value as any)}
+          onChange={e => setVertical(e.target.value as any)}
         >
           <option value={undefined}>auto</option>
           <option value="leading">leading</option>
@@ -202,7 +202,7 @@ export const VStackPlayground = () => {
         <label>Vertical</label>
         <select
           value={horizontal}
-          onChange={e => setVertical(e.target.value as any)}
+          onChange={e => setHorizontal(e.target.value as any)}
         >
           <option value={undefined}>auto</option>
           <option value="distribute-around">distribute-around</option>
