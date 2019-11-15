@@ -23,5 +23,5 @@
     "incremental": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "dist", "lib", "src/stories", "example", "rollup.config.js"]
+  "exclude": ["node_modules", "build", "dist", "lib", "src/stories", "example", "**/*.test.ts", "**/*.test.tsx"]
 }
