@@ -24,8 +24,8 @@ type HStackProps = {
   wrap?: 'wrap' | 'wrap-reverse'
 }
 
-function mapJustifyContentHStack(horizontal?: Alignment | Distribution) {
-  switch (horizontal) {
+function mapJustifyContent(alignment?: Alignment | Distribution) {
+  switch (alignment) {
     case 'distribute-around':
       return 'space-around'
     case 'distribute-even':
@@ -44,8 +44,8 @@ function mapJustifyContentHStack(horizontal?: Alignment | Distribution) {
   }
 }
 
-function mapAlignSelfHStack(vertical?: Alignment) {
-  switch (vertical) {
+function mapAlignItems(alignment?: Alignment) {
+  switch (alignment) {
     case 'leading':
       return 'flex-start'
     case 'center':
@@ -67,8 +67,8 @@ const hStackStyle = ({
 }: HStackProps) => css`
   display: ${inline ? 'inline-flex' : 'flex'};
   flex-direction: ${reverse ? 'row-reverse' : 'row'};
-  align-items: ${mapAlignSelfHStack(vertical)};
-  justify-content: ${mapJustifyContentHStack(horizontal)};
+  align-items: ${mapAlignItems(vertical)};
+  justify-content: ${mapJustifyContent(horizontal)};
   flex-wrap: ${wrap || 'nowrap'};
 
   ${spacingApplies(horizontal) &&
@@ -92,39 +92,6 @@ type VStackProps = {
   wrap?: 'wrap' | 'wrap-reverse'
 }
 
-function mapJustifyContentVStack(vertical?: Alignment | Distribution) {
-  switch (vertical) {
-    case 'distribute-around':
-      return 'space-around'
-    case 'distribute-even':
-      return 'space-even'
-    case 'distribute-edges':
-      return 'space-between'
-
-    case 'leading':
-      return 'flex-start'
-    case 'center':
-      return 'center'
-    case 'trailing':
-      return 'flex-end'
-    case undefined:
-      return 'auto'
-  }
-}
-
-function mapAlignSelfVStack(vertical?: Alignment) {
-  switch (vertical) {
-    case 'leading':
-      return 'flex-start'
-    case 'center':
-      return 'center'
-    case 'trailing':
-      return 'flex-end'
-    case undefined:
-      return 'auto'
-  }
-}
-
 const vStackStyle = ({
   reverse,
   wrap,
@@ -135,8 +102,8 @@ const vStackStyle = ({
 }: VStackProps) => css`
   display: ${inline ? 'inline-flex' : 'flex'};
   flex-direction: ${reverse ? 'column-reverse' : 'column'};
-  align-items: ${mapAlignSelfVStack(horizontal)};
-  justify-content: ${mapJustifyContentVStack(vertical)};
+  align-items: ${mapAlignItems(horizontal)};
+  justify-content: ${mapJustifyContent(vertical)};
   flex-wrap: ${wrap || 'nowrap'};
 
   ${spacingApplies(vertical) && spacing && spacing !== 0
