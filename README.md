@@ -11,8 +11,18 @@
 
 This is a loose attempt at porting the `VStack` and `HStack` concepts from SwiftUI.
 
-```tsx
+## Install
 
+```sh
+yarn add @twopm/restack
+```
+
+## Usage
+
+```tsx
+import { VStack } from '@twopm/restack'
+
+const App = () => (
   <VStack
     horizontal="center"
     vertical="distribute-edges"
@@ -22,5 +32,5 @@ This is a loose attempt at porting the `VStack` and `HStack` concepts from Swift
     <p>Two</p>
     <p>Three</p>
   </VStack>
-
+)
 ```
