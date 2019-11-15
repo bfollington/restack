@@ -2,6 +2,17 @@ import * as React from 'react'
 import { css, cx } from 'emotion'
 import { Alignment, Distribution } from './alignment'
 
+function spacingApplies(alignment?: Alignment | Distribution) {
+  switch (alignment) {
+    case 'distribute-around':
+    case 'distribute-even':
+    case 'distribute-edges':
+      return false
+  }
+
+  return true
+}
+
 type HStackProps = {
   className?: string // TODO: remove
   children: React.ReactNode
@@ -61,7 +72,10 @@ const hStackStyle = ({
   justify-content: ${mapJustifyContentHStack(horizontal)};
   flex-wrap: ${wrap || 'nowrap'};
 
-  ${spacing && spacing !== 0 && `> * + * { margin-left: ${spacing}px; }`}
+  ${spacingApplies(horizontal) &&
+    spacing &&
+    spacing !== 0 &&
+    `> * + * { margin-left: ${spacing}px; }`}
 `
 
 export const HStack = (p: HStackProps) => {
@@ -127,7 +141,9 @@ const vStackStyle = ({
   justify-content: ${mapJustifyContentVStack(vertical)};
   flex-wrap: ${wrap || 'nowrap'};
 
-  ${spacing && spacing !== 0 ? `> * + * { margin-top: ${spacing}px; }` : ``}
+  ${spacingApplies(vertical) && spacing && spacing !== 0
+    ? `> * + * { margin-top: ${spacing}px; }`
+    : ``}
 `
 
 export const VStack = (p: VStackProps) => {
