@@ -1,11 +1,30 @@
 import * as React from 'react'
 import { css, cx } from 'emotion'
-import { AlignOption, mapAlignOptionToCss } from './cssIterop'
+import { Alignment } from './alignment'
+
+type AlignmentSelf = Alignment | 'baseline' | 'stretch'
+
+function mapAlignSelf(align?: AlignmentSelf) {
+  switch (align) {
+    case 'leading':
+      return 'flex-start'
+    case 'center':
+      return 'center'
+    case 'trailing':
+      return 'flex-end'
+    case 'baseline':
+      return 'baseline'
+    case 'stretch':
+      return 'stretch'
+    case undefined:
+      return 'auto'
+  }
+}
 
 type FrameProps = {
   className?: string
 
-  alignSelf?: AlignOption
+  alignSelf?: AlignmentSelf
 
   grow?: number
   shrink?: number
@@ -30,7 +49,7 @@ const frameStyle = ({
   maxWidth,
   maxHeight,
 }: FrameProps) => css`
-  align-self: ${mapAlignOptionToCss(alignSelf)};
+  align-self: ${mapAlignSelf(alignSelf)};
   flex-grow: ${grow || 0};
   flex-shrink: ${shrink || 1};
   flex-basis: ${basis ? basis + 'px' : 'auto'};
