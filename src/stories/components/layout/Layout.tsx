@@ -125,23 +125,25 @@ export const HStackPlayground = () => {
           onChange={e => setSpacing(parseInt(e.target.value))}
         />
       </div>
-      <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
-        <Frame>
-          <Placeholder width={64} height={64} color="#EF9A9A" filled />
-        </Frame>
+      <Placeholder>
+        <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
+          <Frame>
+            <Placeholder width={64} height={64} color="#EF9A9A" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={128} height={64} color="#A5D6A7" filled />
-        </Frame>
+          <Frame>
+            <Placeholder width={128} height={64} color="#A5D6A7" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={64} height={128} color="#90CAF9" filled />
-        </Frame>
+          <Frame>
+            <Placeholder width={64} height={128} color="#90CAF9" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={64} height={64} color="#FFCC80" filled />
-        </Frame>
-      </HStack>
+          <Frame>
+            <Placeholder width={64} height={64} color="#FFCC80" filled />
+          </Frame>
+        </HStack>
+      </Placeholder>
     </div>
   )
 }
@@ -195,23 +197,25 @@ export const VStackPlayground = () => {
           onChange={e => setSpacing(parseInt(e.target.value))}
         />
       </div>
-      <VStack vertical={vertical} horizontal={horizontal} spacing={spacing}>
-        <Frame>
-          <Placeholder width={64} height={64} color="#EF9A9A" filled />
-        </Frame>
+      <Placeholder>
+        <VStack vertical={vertical} horizontal={horizontal} spacing={spacing}>
+          <Frame>
+            <Placeholder width={64} height={64} color="#EF9A9A" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={128} height={64} color="#A5D6A7" filled />
-        </Frame>
+          <Frame>
+            <Placeholder width={128} height={64} color="#A5D6A7" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={64} height={128} color="#90CAF9" filled />
-        </Frame>
+          <Frame>
+            <Placeholder width={64} height={128} color="#90CAF9" filled />
+          </Frame>
 
-        <Frame>
-          <Placeholder width={64} height={64} color="#FFCC80" filled />
-        </Frame>
-      </VStack>
+          <Frame>
+            <Placeholder width={64} height={64} color="#FFCC80" filled />
+          </Frame>
+        </VStack>
+      </Placeholder>
     </div>
   )
 }
