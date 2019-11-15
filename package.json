@@ -2,6 +2,7 @@
   "name": "@twopm/restack",
   "version": "0.0.0",
   "description": "SwiftUI inspired layout library for React",
+  "keywords": ["react", "flexbox", "swift", "swiftui", "layout", "vstack", "hstack"],
   "author": "bfollington",
   "license": "MIT",
   "repository": "bfollington/restack",
