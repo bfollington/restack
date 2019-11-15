@@ -14,7 +14,6 @@ function spacingApplies(alignment?: Alignment | Distribution) {
 }
 
 type HStackProps = {
-  className?: string // TODO: remove
   children: React.ReactNode
   horizontal?: Alignment | Distribution
   vertical?: Alignment
@@ -79,11 +78,10 @@ const hStackStyle = ({
 `
 
 export const HStack = (p: HStackProps) => {
-  return <div className={cx(hStackStyle(p), p.className)}>{p.children}</div>
+  return <div className={cx(hStackStyle(p))}>{p.children}</div>
 }
 
 type VStackProps = {
-  className?: string // TODO: remove
   children: React.ReactNode
   horizontal?: Alignment
   vertical?: Alignment | Distribution
@@ -147,5 +145,5 @@ const vStackStyle = ({
 `
 
 export const VStack = (p: VStackProps) => {
-  return <div className={cx(vStackStyle(p), p.className)}>{p.children}</div>
+  return <div className={cx(vStackStyle(p))}>{p.children}</div>
 }

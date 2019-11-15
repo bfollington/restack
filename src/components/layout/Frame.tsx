@@ -22,8 +22,6 @@ function mapAlignSelf(align?: AlignmentSelf) {
 }
 
 type FrameProps = {
-  className?: string
-
   alignSelf?: AlignmentSelf
 
   grow?: number
@@ -61,5 +59,5 @@ const frameStyle = ({
 `
 
 export const Frame = (p: FrameProps) => {
-  return <div className={cx(frameStyle(p), p.className)}>{p.children}</div>
+  return <div className={cx(frameStyle(p))}>{p.children}</div>
 }
