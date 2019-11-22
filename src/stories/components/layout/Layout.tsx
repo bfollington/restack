@@ -99,6 +99,7 @@ export const HStackPlayground = () => {
           <option value="distribute-edges">distribute-edges</option>
           <option value="leading">leading</option>
           <option value="center">center</option>
+          <option value="stretch">stretch</option>
           <option value="trailing">trailing</option>
         </select>
       </div>
@@ -111,6 +112,7 @@ export const HStackPlayground = () => {
           <option value={undefined}>auto</option>
           <option value="leading">leading</option>
           <option value="center">center</option>
+          <option value="stretch">stretch</option>
           <option value="trailing">trailing</option>
         </select>
       </div>
@@ -126,23 +128,49 @@ export const HStackPlayground = () => {
         />
       </div>
       <Placeholder>
-        <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
-          <Frame>
-            <Placeholder width={64} height={64} color="#EF9A9A" filled />
-          </Frame>
+        <Frame minHeight={96}>
+          <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
+            <Frame>
+              <Placeholder
+                width={64}
+                height={64}
+                color="#EF9A9A"
+                filled
+                fillHeight
+              />
+            </Frame>
 
-          <Frame>
-            <Placeholder width={128} height={64} color="#A5D6A7" filled />
-          </Frame>
+            <Frame>
+              <Placeholder
+                width={128}
+                height={64}
+                color="#A5D6A7"
+                filled
+                fillHeight
+              />
+            </Frame>
 
-          <Frame>
-            <Placeholder width={64} height={128} color="#90CAF9" filled />
-          </Frame>
+            <Frame>
+              <Placeholder
+                width={64}
+                height={128}
+                color="#90CAF9"
+                filled
+                fillHeight
+              />
+            </Frame>
 
-          <Frame>
-            <Placeholder width={64} height={64} color="#FFCC80" filled />
-          </Frame>
-        </HStack>
+            <Frame>
+              <Placeholder
+                width={64}
+                height={64}
+                color="#FFCC80"
+                filled
+                fillHeight
+              />
+            </Frame>
+          </HStack>
+        </Frame>
       </Placeholder>
     </div>
   )
@@ -172,6 +200,7 @@ export const VStackPlayground = () => {
           <option value="distribute-edges">distribute-edges</option>
           <option value="leading">leading</option>
           <option value="center">center</option>
+          <option value="stretch">stretch</option>
           <option value="trailing">trailing</option>
         </select>
       </div>
@@ -183,6 +212,7 @@ export const VStackPlayground = () => {
         >
           <option value={undefined}>auto</option>
           <option value="leading">leading</option>
+          <option value="stretch">stretch</option>
           <option value="center">center</option>
           <option value="trailing">trailing</option>
         </select>

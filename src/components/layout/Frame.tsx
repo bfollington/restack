@@ -22,6 +22,7 @@ function mapAlignSelf(align?: AlignmentSelf) {
 }
 
 type FrameProps = {
+  className?: string
   alignSelf?: AlignmentSelf
 
   grow?: number
@@ -35,6 +36,8 @@ type FrameProps = {
 
   minHeight?: number
   maxHeight?: number
+
+  scroll?: boolean
 }
 
 const frameStyle = ({
@@ -46,18 +49,22 @@ const frameStyle = ({
   minHeight,
   maxWidth,
   maxHeight,
+  scroll,
 }: FrameProps) => css`
+  display: flex;
   align-self: ${mapAlignSelf(alignSelf)};
   flex-grow: ${grow || 0};
   flex-shrink: ${shrink || 1};
   flex-basis: ${basis ? basis + 'px' : 'auto'};
+  box-sizing: border-box;
 
+  ${scroll && `overflow: auto;`}
   ${minWidth && `min-width: ${minWidth}px;`}
   ${maxWidth && `max-width: ${maxWidth}px;`}
   ${minHeight && `min-height: ${minHeight}px;`}
-  ${maxHeight && `min-height: ${maxHeight}px;`}
+  ${maxHeight && `max-height: ${maxHeight}px;`}
 `
 
 export const Frame = (p: FrameProps) => {
-  return <div className={cx(frameStyle(p))}>{p.children}</div>
+  return <div className={cx(frameStyle(p), p.className)}>{p.children}</div>
 }

@@ -70,6 +70,9 @@ const hStackStyle = ({
   align-items: ${mapAlignItems(vertical)};
   justify-content: ${mapJustifyContent(horizontal)};
   flex-wrap: ${wrap || 'nowrap'};
+  height: ${inline ? 'auto' : '100%'};
+  align-self: stretch;
+  flex: 1;
 
   ${spacingApplies(horizontal) &&
     spacing &&
@@ -105,6 +108,9 @@ const vStackStyle = ({
   align-items: ${mapAlignItems(horizontal)};
   justify-content: ${mapJustifyContent(vertical)};
   flex-wrap: ${wrap || 'nowrap'};
+  height: ${inline ? 'auto' : '100%'};
+  align-self: stretch;
+  flex: 1;
 
   ${spacingApplies(vertical) && spacing && spacing !== 0
     ? `> * + * { margin-top: ${spacing}px; }`
