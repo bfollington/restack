@@ -35,6 +35,8 @@ function mapJustifyContent(alignment?: Alignment | Distribution) {
 
     case 'leading':
       return 'flex-start'
+    case 'stretch':
+      return 'stretch'
     case 'center':
       return 'center'
     case 'trailing':
@@ -48,6 +50,8 @@ function mapAlignItems(alignment?: Alignment) {
   switch (alignment) {
     case 'leading':
       return 'flex-start'
+    case 'stretch':
+      return 'stretch'
     case 'center':
       return 'center'
     case 'trailing':
