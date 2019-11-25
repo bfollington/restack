@@ -13,7 +13,7 @@ const greyBg = css`
 export const MiniApp = () => {
   return (
     <VStack vertical="distribute-edges">
-      <Frame className={cx(greyBg)} minHeight={48} shrink={0} grow={0}>
+      <Frame className={cx(greyBg)} minHeight={48}>
         <HStack horizontal="distribute-edges" vertical="center">
           <label>My App</label>
           <DemoButton>
@@ -28,7 +28,7 @@ export const MiniApp = () => {
         <ContentView />
       </Frame>
 
-      <Frame className={cx(greyBg)} minHeight={48} shrink={0} grow={0}>
+      <Frame className={cx(greyBg)} minHeight={48}>
         <HStack horizontal="distribute-around">
           <DemoButton>
             <span role="img" aria-label="Home">
