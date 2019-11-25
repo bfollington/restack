@@ -130,7 +130,7 @@ export const HStackPlayground = () => {
       <Placeholder>
         <Frame minHeight={96}>
           <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
-            <Frame shrink={0} grow={0}>
+            <Frame>
               <Placeholder
                 width={64}
                 height={64}
