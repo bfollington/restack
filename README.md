@@ -5,7 +5,7 @@
 <a href="https://app.netlify.com/sites/restack/deploys"><img src="https://api.netlify.com/api/v1/badges/002db124-6e09-477e-833b-82ef52391196/deploy-status"></a>
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bfollington/restack">
 <br>
-  <img alt="npm" src="https://img.shields.io/npm/v/@twopm/restack">
+  <a href="https://www.npmjs.com/package/@twopm/restack"><img alt="npm" src="https://img.shields.io/npm/v/@twopm/restack"></a>
 <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@twopm/restack">
 <img alt="GitHub" src="https://img.shields.io/github/license/bfollington/restack">
 
