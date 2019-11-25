@@ -1,6 +1,6 @@
 {
   "name": "@twopm/restack",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "SwiftUI inspired layout library for React",
   "keywords": [
     "react",
