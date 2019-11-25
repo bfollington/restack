@@ -15,9 +15,9 @@ type Props = {
 }
 
 const style = (p: Props) => css`
-  ${p.width ? `width: ${p.width}px;` : ``}
-  ${p.height ? `height: ${p.height}px;` : ``}
-  ${p.fillHeight ? `height: 100%;` : ``}
+  ${p.width ? `min-width: ${p.width}px;` : ``}
+  ${p.height ? `min-height: ${p.height}px;` : ``}
+  ${p.fillHeight ? `align-self: stretch;` : ``}
   ${p.padding ? `padding: ${p.padding}px;` : ``}
 
   border: 1px dashed ${p.color ? p.color : '#aaa'};
