@@ -16,7 +16,11 @@ export const MiniApp = () => {
       <Frame className={cx(greyBg)} minHeight={48} shrink={0} grow={0}>
         <HStack horizontal="distribute-edges" vertical="center">
           <label>My App</label>
-          <DemoButton>⚙️</DemoButton>
+          <DemoButton>
+            <span role="img" aria-label="Settings">
+              ⚙️
+            </span>
+          </DemoButton>
         </HStack>
       </Frame>
 
@@ -26,9 +30,21 @@ export const MiniApp = () => {
 
       <Frame className={cx(greyBg)} minHeight={48} shrink={0} grow={0}>
         <HStack horizontal="distribute-around">
-          <DemoButton>🏚</DemoButton>
-          <DemoButton>🎮</DemoButton>
-          <DemoButton>👤</DemoButton>
+          <DemoButton>
+            <span role="img" aria-label="Home">
+              🏚
+            </span>
+          </DemoButton>
+          <DemoButton>
+            <span role="img" aria-label="Games">
+              🎮
+            </span>
+          </DemoButton>
+          <DemoButton>
+            <span role="img" aria-label="Profile">
+              👤
+            </span>
+          </DemoButton>
         </HStack>
       </Frame>
     </VStack>
