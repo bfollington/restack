@@ -53,9 +53,9 @@ const frameStyle = ({
 }: FrameProps) => css`
   display: flex;
   align-self: ${mapAlignSelf(alignSelf)};
-  flex-grow: ${grow || 0};
-  flex-shrink: ${shrink || 1};
-  flex-basis: ${basis ? basis + 'px' : 'auto'};
+  flex-grow: ${grow != null ? grow : 0};
+  flex-shrink: ${shrink != null ? shrink : 1};
+  flex-basis: ${basis != null ? basis + 'px' : 'auto'};
   box-sizing: border-box;
 
   ${scroll && `overflow: auto;`}

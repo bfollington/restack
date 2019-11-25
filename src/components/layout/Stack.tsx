@@ -42,7 +42,7 @@ function mapJustifyContent(alignment?: Alignment | Distribution) {
     case 'trailing':
       return 'flex-end'
     case undefined:
-      return 'auto'
+      return 'initial'
   }
 }
 
@@ -57,7 +57,7 @@ function mapAlignItems(alignment?: Alignment) {
     case 'trailing':
       return 'flex-end'
     case undefined:
-      return 'auto'
+      return 'initial'
   }
 }
 
