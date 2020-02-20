@@ -80,7 +80,11 @@ const hStackStyle = ({
   ${spacingApplies(horizontal) &&
     spacing &&
     spacing !== 0 &&
-    `> * + * { margin-left: ${spacing}px; }`}
+    `
+      margin-bottom: -${spacing}px;
+      > * { margin-right: ${spacing}px; margin-bottom: ${spacing}px; }
+      > *:last-child { margin-right: 0; }
+    `}
 `
 
 export const HStack = (p: HStackProps) => {

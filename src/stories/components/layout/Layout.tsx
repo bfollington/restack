@@ -84,6 +84,9 @@ export const HStackPlayground = () => {
   >(undefined)
   const [vertical, setVertical] = useState<Alignment | undefined>(undefined)
   const [spacing, setSpacing] = useState(0)
+  const [wrap, setWrap] = useState<'wrap' | 'wrap-reverse' | undefined>(
+    undefined
+  )
 
   return (
     <div>
@@ -116,6 +119,14 @@ export const HStackPlayground = () => {
           <option value="trailing">trailing</option>
         </select>
       </div>
+      <div>
+        <label>Wrapping</label>
+        <select value={wrap} onChange={e => setWrap(e.target.value as any)}>
+          <option value={undefined}>none</option>
+          <option value="wrap">wrap</option>
+          <option value="wrap-reverse">wrap reverse</option>
+        </select>
+      </div>
 
       <div>
         <label>Spacing</label>
@@ -129,7 +140,12 @@ export const HStackPlayground = () => {
       </div>
       <Placeholder>
         <Frame minHeight={96}>
-          <HStack horizontal={horizontal} vertical={vertical} spacing={spacing}>
+          <HStack
+            horizontal={horizontal}
+            vertical={vertical}
+            spacing={spacing}
+            wrap={wrap}
+          >
             <Frame>
               <Placeholder
                 width={64}
