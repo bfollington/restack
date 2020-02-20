@@ -22,6 +22,9 @@ type HStackProps = {
   inline?: boolean
   reverse?: boolean
   wrap?: 'wrap' | 'wrap-reverse'
+
+  grow?: boolean
+  shrink?: boolean
 }
 
 function mapJustifyContent(alignment?: Alignment | Distribution) {
@@ -68,6 +71,8 @@ const hStackStyle = ({
   horizontal,
   vertical,
   spacing,
+  grow = true,
+  shrink = true,
 }: HStackProps) => css`
   display: ${inline ? 'inline-flex' : 'flex'};
   flex-direction: ${reverse ? 'row-reverse' : 'row'};
@@ -75,7 +80,9 @@ const hStackStyle = ({
   justify-content: ${mapJustifyContent(horizontal)};
   flex-wrap: ${wrap || 'nowrap'};
   ${inline ? '' : `align-self: stretch;`}
-  flex: 1;
+  flex-basis: 0%;
+  flex-grow: ${grow ? '1' : '0'};
+  flex-shrink: ${shrink ? '1' : '0'};
 
   ${spacingApplies(horizontal) &&
     spacing &&
@@ -100,6 +107,8 @@ type VStackProps = {
   inline?: boolean
   reverse?: boolean
   wrap?: 'wrap' | 'wrap-reverse'
+  grow?: boolean
+  shrink?: boolean
 }
 
 const vStackStyle = ({
@@ -109,6 +118,8 @@ const vStackStyle = ({
   horizontal,
   vertical,
   spacing,
+  grow = true,
+  shrink = true,
 }: VStackProps) => css`
   display: ${inline ? 'inline-flex' : 'flex'};
   flex-direction: ${reverse ? 'column-reverse' : 'column'};
@@ -116,7 +127,9 @@ const vStackStyle = ({
   justify-content: ${mapJustifyContent(vertical)};
   flex-wrap: ${wrap || 'nowrap'};
   ${inline ? '' : `align-self: stretch;`}
-  flex: 1;
+  flex-basis: 0%;
+  flex-grow: ${grow ? '1' : '0'};
+  flex-shrink: ${shrink ? '1' : '0'};
 
   ${spacingApplies(vertical) && spacing && spacing !== 0
     ? `> * + * { margin-top: ${spacing}px; }`
