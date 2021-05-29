@@ -17,7 +17,7 @@
 
 
 
-<p align="center"><strong>restack</strong> is a port of the `VStack` and `HStack` concepts from SwiftUI. Simple, composable application layouts.
+<p align="center"><strong>restack</strong> is a port of the <code>VStack</code> and <code>HStack</code> concepts from SwiftUI. Simple, composable application layouts.
 
 <p align="center"><a href="https://restack.netlify.app/">👁 &nbsp;Live Demo</a></p>
 
