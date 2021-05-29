@@ -19,10 +19,6 @@
   "files": [
     "lib"
   ],
-  "engines": {
-    "node": "~12",
-    "npm": "~6"
-  },
   "scripts": {
     "test": "yarn use-test-config && cross-env CI=1 react-scripts test --env=jsdom; yarn use-normal-config",
     "test-ci": "cross-env CI=1 react-scripts test --env=jsdom",
