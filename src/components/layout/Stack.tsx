@@ -71,6 +71,7 @@ const hStackStyle = ({
   horizontal,
   vertical,
   spacing,
+  children,
   grow = true,
   shrink = true,
 }: HStackProps) => css`
@@ -84,7 +85,9 @@ const hStackStyle = ({
   flex-grow: ${grow ? '1' : '0'};
   flex-shrink: ${shrink ? '1' : '0'};
 
-  ${spacingApplies(horizontal) &&
+  ${children &&
+    React.Children.count(children) > 1 &&
+    spacingApplies(horizontal) &&
     spacing &&
     spacing !== 0 &&
     `

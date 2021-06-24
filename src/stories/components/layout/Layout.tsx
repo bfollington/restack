@@ -195,6 +195,36 @@ HStackPlayground.story = {
   name: 'HStack',
 }
 
+export const HStackSingleItem = () => {
+  return (
+    <div>
+      <Placeholder>
+        <Frame minHeight={96}>
+          <HStack
+            horizontal="stretch"
+            vertical="leading"
+            spacing={12}
+            wrap="wrap"
+          >
+            <Frame>
+              <Placeholder
+                width={64}
+                height={128}
+                color="#EF9A9A"
+                filled
+                fillHeight
+              />
+            </Frame>
+          </HStack>
+        </Frame>
+      </Placeholder>
+    </div>
+  )
+}
+HStackSingleItem.story = {
+  name: 'HStackSingleItem',
+}
+
 export const VStackPlayground = () => {
   const [vertical, setVertical] = useState<
     Alignment | Distribution | undefined
